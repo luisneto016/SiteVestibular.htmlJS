@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rota do Vestibular</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="leitura" id="leitura"></div>
+
+<header class="topo">
+  <a class="logo" href="#inicio"><span class="logo-marca">R</span>Rota do Vestibular</a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#inicio" data-page="inicio">Início</a>
+    <a href="#materias" data-page="materias">Matérias</a>
+    <a href="#metodo" data-page="metodo">Como estudar</a>
+    <a href="#videos" data-page="videos">Vídeos</a>
+    <a href="#cursos" data-page="cursos">Cursos</a>
+    <a href="#recursos" data-page="recursos">Sites oficiais</a>
+  </nav>
+  <a href="#perfil" data-page="perfil" class="chip-perfil" id="chipPerfil"></a>
+</header>
+
+<main>
+<!-- ================= INÍCIO ================= -->
+<section id="inicio" class="pagina">
+  <div class="hero">
+    <div class="aurora"></div>
+    <span class="chip c1">f(x) = ax + b</span><span class="chip c2">E = mc²</span>
+    <span class="chip c3">H₂O</span><span class="chip c4">1789</span><span class="chip c5">DNA</span>
+    <div class="hero-texto">
+      <p id="saudacao" class="saudacao"></p>
+      <h1><span id="digitado"></span><span class="cursor">|</span></h1>
+      <p class="sub">Entrar aqui já marca hoje como dia estudado. Mantenha a sequência, acompanhe sua meta do mês e estude com métodos que a pesquisa comprova.</p>
+      <div class="acoes">
+        <a class="btn" href="#calendario">Ver meu calendário</a>
+        <a class="btn-fantasma" href="#metodo">Aprender a estudar</a>
+      </div>
+    </div>
+    <div class="anel-box">
+      <svg viewBox="0 0 120 120" class="anel" aria-label="Meta mensal">
+        <circle cx="60" cy="60" r="52" class="anel-fundo"/>
+        <circle cx="60" cy="60" r="52" class="anel-prog" id="anelProg"/>
+      </svg>
+      <div class="anel-centro"><strong id="sequencia">0</strong><span>dias seguidos</span></div>
+    </div>
+  </div>
+
+  <div class="secao reveal" id="calendario">
+    <h2>Seu calendário de estudos</h2>
+    <div class="cal-layout">
+      <div class="calendario">
+        <div class="cal-topo">
+          <button id="mesAnt" aria-label="Mês anterior">‹</button>
+          <h3 id="mesTitulo"></h3>
+          <button id="mesProx" aria-label="Próximo mês">›</button>
+        </div>
+        <div class="cal-grade" id="calGrade"></div>
+      </div>
+      <aside class="resumo">
+        <h3>Resumo</h3>
+        <p><strong id="totalMes">0</strong> dias estudados neste mês (meta: 20)</p>
+        <p><strong id="totalGeral">0</strong> dias estudados no total</p>
+        <label for="dataProva">Data da sua prova</label>
+        <input type="date" id="dataProva">
+        <p id="faltam" class="faltam"></p>
+        <p class="legenda"><span class="ponto estudado"></span>estudado <span class="ponto hoje"></span>hoje <span class="ponto prova"></span>prova</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="secao reveal">
+    <h2>Hoje no seu plano</h2>
+    <div class="duas">
+      <div class="cartao">
+        <h3>Tarefas de hoje</h3>
+        <div class="add"><input id="novaTarefa" class="entrada" placeholder="Ex.: 10 questões de funções"><button class="btn mini" id="addTarefa">Adicionar</button></div>
+        <ul class="tarefas" id="listaTarefas"></ul>
+      </div>
+      <div class="cartao dica"><h3>Dica do dia</h3><p id="dicaDia"></p></div>
+    </div>
+  </div>
+
+  <div class="secao reveal">
+    <h2>O Enem em um olhar</h2>
+    <div class="numeros">
+      <div class="cartao"><strong>Dia 1</strong>Linguagens e Ciências Humanas (45 questões cada) e a Redação.</div>
+      <div class="cartao"><strong>Dia 2</strong>Ciências da Natureza e Matemática, com 45 questões cada.</div>
+      <div class="cartao"><strong>Redação</strong>Nota de 0 a 1000, somando cinco competências de até 200 pontos.</div>
+      <div class="cartao"><strong>Nota</strong>Calculada pela Teoria de Resposta ao Item, não só pelo total de acertos.</div>
+    </div>
+    <div class="cartao">
+      <h3>As cinco competências da redação</h3>
+      <ol class="competencias">
+        <li>Dominar a norma culta da língua escrita.</li>
+        <li>Compreender a proposta e aplicar conceitos de várias áreas, no formato dissertativo-argumentativo.</li>
+        <li>Selecionar e organizar informações e argumentos para defender um ponto de vista.</li>
+        <li>Usar mecanismos linguísticos que garantam a coesão do texto.</li>
+        <li>Elaborar uma proposta de intervenção que respeite os direitos humanos.</li>
+      </ol>
+    </div>
+    <p class="nota">O formato pode mudar de um ano para outro. Confirme no edital da sua prova.</p>
+  </div>
+</section>
+
+<!-- ================= MATÉRIAS ================= -->
+<section id="materias" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Matérias e temas</h1>
+    <p class="intro">Temas que costumam aparecer em provas como o Enem, por área. A seleção é minha: confirme o conteúdo no edital da sua prova. Marque os temas que já estudou para ganhar pontos de experiência.</p>
+    <div class="filtros" id="filtros"></div>
+    <div class="grade-materias" id="gradeMaterias"></div>
+  </div>
+</section>
+
+<!-- ================= COMO ESTUDAR ================= -->
+<section id="metodo" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Como estudar, segundo a pesquisa</h1>
+    <p class="intro">Sete achados de psicologia cognitiva, escolhidos por serem úteis para quem se prepara para provas. Cada aba traz o estudo, o que ele mostrou e como aplicar.</p>
+    <p class="destaque">Se estudar desse jeito parece mais difícil, é normal: o psicólogo Robert Bjork chama isso de “dificuldades desejáveis”, esforço que custa agora e rende memória depois.</p>
+
+    <div class="abas" role="tablist" id="abas">
+      <button role="tab" class="aba ativa" data-alvo="e1" aria-selected="true">Recuperação ativa</button>
+      <button role="tab" class="aba" data-alvo="e2" aria-selected="false">Repetição espaçada</button>
+      <button role="tab" class="aba" data-alvo="e3" aria-selected="false">Intercalação</button>
+      <button role="tab" class="aba" data-alvo="e4" aria-selected="false">Explicar com as próprias palavras</button>
+      <button role="tab" class="aba" data-alvo="e5" aria-selected="false">Sono e memória</button>
+      <button role="tab" class="aba" data-alvo="e6" aria-selected="false">Pomodoro</button>
+      <button role="tab" class="aba" data-alvo="e7" aria-selected="false">Mentalidade de crescimento</button>
+      <button role="tab" class="aba" data-alvo="e8" aria-selected="false">Plano semanal e caderno de erros</button>
+    </div>
+
+    <article class="estudo ativo" id="e1" role="tabpanel">
+      <p class="ref">Roediger e Karpicke, 2006 · Psychological Science</p>
+      <h3>Recuperação ativa</h3>
+      <p class="achado">Estudantes que releram um texto lembraram mais logo depois. Mas, uma semana depois, quem tentou recordar o conteúdo sem olhar o texto lembrou bem mais. Testar a si mesmo não só mede a memória: ele a fortalece.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Feche o material e escreva tudo o que lembra do assunto.</li><li>Confira o que faltou e anote só as lacunas.</li><li>Faça questões de provas anteriores antes de reler a teoria.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e2" role="tabpanel" hidden>
+      <p class="ref">Ebbinghaus, 1885 · Dunlosky e colaboradores, 2013, Psychological Science in the Public Interest</p>
+      <h3>Repetição espaçada</h3>
+      <p class="achado">Ebbinghaus mostrou que o esquecimento é rápido logo depois de aprender e depois desacelera. Revisar em intervalos cada vez maiores combate essa queda. Na revisão de Dunlosky, praticar com testes e espaçar o estudo foram as duas técnicas de maior utilidade, enquanto grifar e reler ficaram entre as menos úteis.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Revise cada assunto depois de 1 dia, 3 dias, 1 semana e 2 semanas (um exemplo de intervalos).</li><li>Use o calendário do site para planejar essas revisões.</li><li>Prefira várias sessões curtas a uma maratona na véspera.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e3" role="tabpanel" hidden>
+      <p class="ref">Rohrer e Taylor, 2007 · Instructional Science</p>
+      <h3>Intercalação</h3>
+      <p class="achado">Alunos que misturaram tipos diferentes de problemas de matemática durante a prática foram melhores num teste feito uma semana depois do que quem treinou um tipo por vez, embora a prática misturada parecesse mais difícil.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Em vez de 20 questões do mesmo tema, faça 5 de cada um de quatro temas.</li><li>Misture matérias em uma mesma sessão de exercícios.</li><li>Ao errar, identifique primeiro qual tipo de problema é aquele.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e4" role="tabpanel" hidden>
+      <p class="ref">Chi e colaboradores, 1989 · Cognitive Science (técnica popularizada em nome de Richard Feynman)</p>
+      <h3>Explicar com as próprias palavras</h3>
+      <p class="achado">Nesse estudo, estudantes que explicavam para si mesmos cada passo de exemplos resolvidos de Física tiveram melhor desempenho depois na resolução de problemas. A chamada técnica de Feynman usa a mesma ideia: ensinar o assunto de forma simples revela onde você não entendeu.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Explique o tema em voz alta, como se falasse com um colega do 9º ano.</li><li>Quando travar, volte ao material só naquele ponto.</li><li>Repita até conseguir explicar sem consultar.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e5" role="tabpanel" hidden>
+      <p class="ref">Diekelmann e Born, 2010 · Nature Reviews Neuroscience</p>
+      <h3>Sono e memória</h3>
+      <p class="achado">A revisão reúne evidências de que o sono ajuda a consolidar o que foi aprendido durante o dia, transformando memórias recentes em memórias mais estáveis.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Não troque a noite de sono por mais uma hora de revisão.</li><li>Deixe uma revisão leve para antes de dormir.</li><li>Na semana da prova, mantenha horários regulares.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e6" role="tabpanel" hidden>
+      <p class="ref">Francesco Cirillo, final dos anos 1980</p>
+      <h3>Pomodoro</h3>
+      <p class="achado">É um método prático, não um experimento: estudar em blocos de 25 minutos com pausas de 5 ajuda muita gente a começar e a manter o foco. Tem menos pesquisa própria que as técnicas anteriores, então use como estrutura para aplicar as outras.</p>
+      <div class="pomo">
+        <div class="pomo-tempo" id="pomoTempo">25:00</div>
+        <p id="pomoModo">Foco</p>
+        <div class="acoes"><button class="btn" id="pomoBtn">Iniciar</button><button class="btn-fantasma escuro" id="pomoReset">Zerar</button></div>
+      </div>
+    </article>
+
+    <article class="estudo" id="e7" role="tabpanel" hidden>
+      <p class="ref">Yeager e colaboradores, 2019 · Nature</p>
+      <h3>Mentalidade de crescimento</h3>
+      <p class="achado">Num grande estudo com estudantes do ensino médio dos EUA, uma intervenção online breve sobre a ideia de que a inteligência pode se desenvolver melhorou as notas de alunos com desempenho mais baixo. O efeito foi modesto, mas foi obtido a baixo custo. A ideia vem dos trabalhos de Carol Dweck.</p>
+      <div class="como"><h4>Como aplicar</h4>
+        <ol><li>Troque “não sei isso” por “ainda não sei isso”.</li><li>Trate cada erro em simulado como um mapa do que revisar.</li><li>Compare seu desempenho com o seu passado, não com o dos outros.</li></ol></div>
+    </article>
+
+    <article class="estudo" id="e8" role="tabpanel" hidden>
+      <p class="ref">Rotina prática, montada com as técnicas das outras abas</p>
+      <h3>Plano semanal e caderno de erros</h3>
+      <p class="achado">Um plano simples transforma as técnicas em hábito: alterne as áreas ao longo da semana, reserve um bloco fixo para revisar e use os erros como guia do que estudar.</p>
+      <div class="plano">
+        <div><b>Segunda</b>Matemática e revisão</div><div><b>Terça</b>Ciências da Natureza</div>
+        <div><b>Quarta</b>Linguagens e redação</div><div><b>Quinta</b>Ciências Humanas</div>
+        <div><b>Sexta</b>Matemática e simulado curto</div><div><b>Sábado</b>Redação e revisão geral</div>
+        <div><b>Domingo</b>Descanso leve</div>
+      </div>
+      <div class="como"><h4>Caderno de erros</h4>
+        <ol><li>Anote o número da questão e o tema.</li><li>Escreva por que errou: conteúdo, atenção ou tempo.</li><li>Refaça a questão depois de três dias, sem consultar.</li></ol></div>
+    </article>
+
+    <p class="nota">Os resumos são meus, escritos a partir do que cada estudo investigou. Para se aprofundar, procure os títulos e autores citados.</p>
+  </div>
+</section>
+
+<!-- ================= VÍDEOS ================= -->
+<section id="videos" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Vídeos para cada matéria</h1>
+    <p class="intro">Passe o mouse (ou toque) no cartão para ver buscas prontas no YouTube.</p>
+    <div class="grade-cards">
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f1"><h3>Matemática</h3><p>Funções, geometria, probabilidade</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=matem%C3%A1tica+enem+fun%C3%A7%C3%B5es+aula">Funções para o Enem</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=geometria+plana+vestibular+aula">Geometria plana</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=probabilidade+enem+aula">Probabilidade</a></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f2"><h3>Redação</h3><p>Estrutura, repertório, competências</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=como+fazer+reda%C3%A7%C3%A3o+enem+nota+1000">Redação do Enem</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=proposta+de+interven%C3%A7%C3%A3o+reda%C3%A7%C3%A3o">Proposta de intervenção</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=repert%C3%B3rio+sociocultural+reda%C3%A7%C3%A3o">Repertório</a></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f3"><h3>Ciências da Natureza</h3><p>Física, Química, Biologia</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=f%C3%ADsica+cinem%C3%A1tica+vestibular+aula">Física: cinemática</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=qu%C3%ADmica+estequiometria+enem">Química: estequiometria</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=biologia+gen%C3%A9tica+enem+aula">Biologia: genética</a></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f4"><h3>Humanas e Linguagens</h3><p>História, Geografia, Literatura</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=hist%C3%B3ria+do+brasil+enem+aula">História do Brasil</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=geografia+enem+aula+resumo">Geografia</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=literatura+brasileira+escolas+liter%C3%A1rias+vestibular">Literatura</a></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f5"><h3>Inglês e Espanhol</h3><p>Leitura e vocabulário</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=ingl%C3%AAs+enem+interpreta%C3%A7%C3%A3o+de+texto">Inglês: interpretação</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=espanhol+enem+aula">Espanhol para o Enem</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=vocabul%C3%A1rio+ingl%C3%AAs+enem">Vocabulário</a></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip-in">
+        <div class="face frente f6"><h3>Filosofia e Sociologia</h3><p>Pensadores e sociedade</p></div>
+        <div class="face verso">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=filosofia+enem+aula+resumo">Filosofia</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=sociologia+enem+aula">Sociologia</a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=cidadania+e+direitos+humanos+enem">Cidadania</a></div></div></div>
+    </div>
+    <h2 class="sub">Canais para conhecer</h2>
+    <p class="intro">Cada botão abre uma busca no YouTube pelo canal.</p>
+    <div class="canais" id="canais"></div>
+  </div>
+</section>
+
+<!-- ================= CURSOS ================= -->
+<section id="cursos" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Cursos para começar agora</h1>
+    <p class="intro">Confira preços, turmas e prazos nos sites oficiais: eles mudam ao longo do ano.</p>
+    <div class="grade-cursos">
+      <a class="curso" target="_blank" rel="noopener" href="https://pt.khanacademy.org"><span class="tag gratis">Gratuito</span><h3>Khan Academy</h3><p>Matemática e ciências do básico ao médio, com exercícios e progresso.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://www.mesalva.com"><span class="tag misto">Gratuito e pago</span><h3>Me Salva!</h3><p>Aulas por matéria, plano de estudos e correção de redação.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://descomplica.com.br"><span class="tag pago">Pago</span><h3>Descomplica</h3><p>Cursos preparatórios para Enem e vestibulares, com aulas ao vivo.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://brasilescola.uol.com.br"><span class="tag gratis">Gratuito</span><h3>Brasil Escola</h3><p>Resumos, exercícios e simulados de todas as matérias.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://www.todamateria.com.br"><span class="tag gratis">Gratuito</span><h3>Toda Matéria</h3><p>Resumos e exercícios de todas as disciplinas, em textos curtos.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://mundoeducacao.uol.com.br"><span class="tag gratis">Gratuito</span><h3>Mundo Educação</h3><p>Conteúdo por matéria, com listas de exercícios e redação.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://www.ev.org.br"><span class="tag gratis">Gratuito</span><h3>Escola Virtual (Fundação Bradesco)</h3><p>Cursos livres online, úteis para reforçar a base.</p></a>
+      <a class="curso" target="_blank" rel="noopener" href="https://www.google.com/search?q=cursinho+popular+gratuito+vestibular"><span class="tag gratis">Gratuito</span><h3>Cursinhos populares</h3><p>Muitas universidades e coletivos oferecem turmas gratuitas. Busque as da sua cidade.</p></a>
+    </div>
+    <div class="cartao guia">
+      <h3>Como escolher um curso</h3>
+      <ol class="competencias">
+        <li>Teste a plataforma de graça antes de pagar.</li>
+        <li>Veja se há correção de redação e simulados.</li>
+        <li>Desconfie de promessas de aprovação garantida.</li>
+        <li>Confira preços e condições só no site oficial do curso.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECURSOS ================= -->
+<section id="recursos" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Sites oficiais e de apoio</h1>
+    <ul class="lista-sites">
+      <li><a target="_blank" rel="noopener" href="https://www.gov.br/inep">Inep (Enem)</a><span>Edital, provas anteriores e gabaritos</span></li>
+      <li><a target="_blank" rel="noopener" href="https://sisu.mec.gov.br">Sisu</a><span>Vagas em universidades públicas pela nota do Enem</span></li>
+      <li><a target="_blank" rel="noopener" href="https://prouniportal.mec.gov.br">ProUni</a><span>Bolsas em instituições privadas</span></li>
+      <li><a target="_blank" rel="noopener" href="https://www.fuvest.br">Fuvest</a><span>Vestibular da USP</span></li>
+      <li><a target="_blank" rel="noopener" href="https://www.comvest.unicamp.br">Comvest</a><span>Vestibular da Unicamp</span></li>
+      <li><a target="_blank" rel="noopener" href="https://www.vunesp.com.br">Vunesp</a><span>Exames e concursos de várias instituições</span></li>
+      <li><a target="_blank" rel="noopener" href="https://acessounico.mec.gov.br">Fies (Acesso Único)</a><span>Financiamento estudantil</span></li>
+    </ul>
+    <h2 class="sub">Conteúdo e estudo</h2>
+    <ul class="lista-sites">
+      <li><a target="_blank" rel="noopener" href="https://pt.khanacademy.org">Khan Academy</a><span>Aulas e exercícios gratuitos</span></li>
+      <li><a target="_blank" rel="noopener" href="https://brasilescola.uol.com.br">Brasil Escola</a><span>Resumos e exercícios</span></li>
+      <li><a target="_blank" rel="noopener" href="https://www.todamateria.com.br">Toda Matéria</a><span>Resumos por disciplina</span></li>
+      <li><a target="_blank" rel="noopener" href="https://mundoeducacao.uol.com.br">Mundo Educação</a><span>Conteúdo e redação</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PERFIL ================= -->
+<section id="perfil" class="pagina">
+  <div class="secao">
+    <h1 class="titulo-pag">Seu perfil</h1>
+    <p class="intro">Tudo fica salvo só neste navegador. Não há senha nem servidor: para levar seu perfil a outro aparelho, use Exportar e Importar.</p>
+    <div class="perfil-grid">
+      <aside class="cartao cartao-perfil">
+        <div class="av grande" id="avGrande"></div>
+        <h3 id="pNome"></h3>
+        <p id="pCurso" class="suave"></p>
+        <div class="nivel"><strong id="pNivel"></strong><span id="pTitulo"></span></div>
+        <div class="prog"><i id="pXp"></i></div>
+        <small id="pXpTxt"></small>
+        <p class="suave" id="pDias"></p>
+      </aside>
+      <div class="editor">
+        <div class="cartao">
+          <h3>Seus dados</h3>
+          <label class="campo">Nome<input id="inNome" class="entrada" maxlength="24"></label>
+          <label class="campo">Curso dos sonhos<input id="inCurso" class="entrada" maxlength="40" placeholder="Ex.: Medicina, Engenharia, Direito"></label>
+          <label class="campo">Prova principal
+            <select id="inProva" class="entrada"><option>Enem</option><option>Fuvest</option><option>Unicamp</option><option>Outra</option></select></label>
+          <p class="nota">As mudanças são salvas automaticamente.</p>
+        </div>
+        <div class="cartao">
+          <h3>Seu personagem</h3>
+          <div id="opcoes"></div>
+          <div class="linha-btns"><button class="btn escuro" id="sortear">Sortear visual</button></div>
+          <p class="nota">Estudar libera itens: o capelo no nível 3 e a coroa de louros no nível 5. Cada dia estudado vale 10 pontos e cada tema marcado vale 5.</p>
+        </div>
+        <div class="cartao">
+          <h3>Cadastro e perfis</h3>
+          <label class="campo">Perfil ativo<select id="trocar" class="entrada"></select></label>
+          <div class="add"><input id="novoNome" class="entrada" maxlength="24" placeholder="Nome do novo perfil"><button class="btn mini" id="cadastrar">Cadastrar</button></div>
+          <div class="linha-btns">
+            <button class="btn escuro" id="exportar">Exportar</button>
+            <label class="btn escuro" for="importar">Importar</label><input type="file" id="importar" accept="application/json" hidden>
+            <button class="btn perigo" id="apagar">Apagar este perfil</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="rodape-grade">
+    <div><strong>Rota do Vestibular</strong><p>Um lugar para estudar todo dia, com método e constância.</p></div>
+    <div><strong>Navegue</strong><a href="#inicio">Início</a><a href="#materias">Matérias</a><a href="#metodo">Como estudar</a><a href="#videos">Vídeos</a></div>
+    <div><strong>Prepare-se</strong><a href="#cursos">Cursos</a><a href="#recursos">Sites oficiais</a><a href="#calendario">Calendário</a><a href="#perfil">Perfil</a></div>
+    <div><strong>Aviso</strong><p>Datas e editais mudam. Sempre confirme nos sites oficiais.</p></div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
